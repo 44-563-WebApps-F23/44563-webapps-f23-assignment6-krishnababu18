@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Author input</title>
+</head>
+<body>
+
+<h2>Author entry Krishna Babu Gali</h2>
+<form>
+    <label for="secretValue"> The auhtor name</label>
+    <input type="password" id="secretValue" name="secretValue" value="dickens"><br>
+    <br>
+    <label for="guessValue"> Guess the auhtor </label>
+    <input type="text" id="guessValue" name="guessValue" > <br>
+    <br>
+    <button typr="button" onclick="checkAuthor()">check the Guess</button>
+    <br>
+    <p>Good:<span id="goodCount">0</span></p>
+    <p>Oops:<span id="OopsCount">0</span></p>
+</form>
+<script>
+  var good=0;
+  var Oops=0;
+function checkAuthor(){
+    var secret = document.getElementById("secretValue").value;
+    var guess= document.getElementById("guessValue").value;
+    if(secret==guess){
+        good++;
+        alert("sorry");
+    }
+    document.getElementById("goodCount").innerHTML=good;
+    document.getElementById("OopsCount").innerHTML=Oops;
+}
+
+</script>
+
+
+
+</body>
+</html> 
