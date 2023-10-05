@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Tips!</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+<body>
+
+<h2>krishna babu Gali shows tip amounts</h2>
+
+<form>
+    <label for="baseAmount">Enter base amount </label>
+    <input type ="number" id="baseAmount" value=50> <br><br>
+
+    <label for="tipInput">Enter the tip percent</label>
+    <input type ="number" id="tipInput" value=15> <br><br>
+
+    <input type="button" onclick="tips()" value="Show Tip">
+</form>
+
+
+<p id="result"></p>
+
+<script> 
+
+function tips(){
+    let baseamount =document.getElementById("baseAmount").value;
+    let tipamount = parseFloat(document.getElementById("tipInput").value);
+    let myOutput ="";
+    let calculatedTip;
+
+    for(let i=0; i<5; i++){
+    calculatedTip=(baseamount*tipamount)/100;
+    myOutput += tipamount+"% is "+calculatedTip+";" ;
+    tipamount+=4;
+    }
+    document.getElementById("result").innerHTML = "Tips are: "+ myOutput;   
+}
+</script>
+
+<br>
+<br>
+<br>
+
+<form> 
+    <input type="radio" id="button1" onClick="chooseOp()" value="sum">
+    <label for="button1">sum</label><br><br>   
+    <input type="radio" id="button2" onClick="chooseOp()" value="difference">
+    <label for="button2">diff</label><br><br>   
+    <input type="radio" id="button3" onClick="chooseOp()" value="product">
+    <label for="button3">mult</label><br><br>
+</form>
+ 
+<p id="output"></p>
+
+<script>
+    function chooseOp(){
+    let base =parseFloat(document.getElementById("baseAmount").value);
+    let tip = parseFloat(document.getElementById("tipInput").value); 
+    let summ;
+    let difference;
+    let product;
+    let state="";
+
+        if(document.getElementById("button1").checked==true){
+        summ=base+tip;
+        state="Sum of "+base+" and "+tip+" is "+summ;
+        }else if(document.getElementById("button2").checked==true){
+        difference= base-tip;
+        state="Difference between "+base+" and "+tip+" is "+difference;
+        }else if(document.getElementById("button3").checked==true){
+        product=base*tip;
+        state="Product of "+base+" and "+tip+" is "+product;
+        }
+       document.getElementById("output").innerHTML = state;   
+
+    }
+</script>
+
+
+</body>
+</html>
