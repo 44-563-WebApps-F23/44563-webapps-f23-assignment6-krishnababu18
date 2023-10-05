@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html>   
 <head>
     <title> Author input</title>
 </head>
@@ -26,6 +26,10 @@ function checkAuthor(){
     var guess= document.getElementById("guessValue").value;
     if(secret==guess){
         good++;
+        alert("You got it right");
+    }
+    else{
+        oops++;
         alert("sorry");
     }
     document.getElementById("goodCount").innerHTML=good;
