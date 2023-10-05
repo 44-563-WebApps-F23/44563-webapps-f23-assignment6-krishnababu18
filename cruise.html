@@ -22,17 +22,17 @@
 <div id="summary"></div><br><br>
 
 <script> 
-    let krishna_cruise={};
+    let my_cruise={};
     function selectCruise(){
-        krishna_cruise={};
+        my_cruise={};
 
         const cabinCheck=document.getElementById("cabin");
         const breakfastCheck=document.getElementById("breakfast");
         const poolCheck=document.getElementById("pool");
 
-        krishna_cruise.shared=cabinCheck.checked;
-        krishna_cruise.breakfast=breakfastCheck.checked;
-        krishna_cruise.pool=poolCheck.checked;
+        my_cruise.shared=cabinCheck.checked;
+        my_cruise.breakfast=breakfastCheck.checked;
+        my_cruise.pool=poolCheck.checked;
 
         document.getElementById("summary").innerHTML= JSON.stringify(my_cruise);
             
@@ -52,8 +52,8 @@
         const dayCount=document.getElementById("day").value;
         const price=document.getElementById("cost").value;
 
-        krishna_cruise.days=dayCount;
-        krishna_cruise.price=price;
+        my_cruise.days=dayCount;
+        my_cruise.price=price;
         document.getElementById("summary").innerHTML= JSON.stringify(my_cruise);
     }
 </script>
