@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Cruise Details</title>
+    <link rel="stylesheet" href="style.css">
+ </head>
+<body>
+
+<h2>Krishna babu Gali goes on a cruise</h2>
+
+<form>
+    <input type ="checkbox" id="cabin" value="True">
+    <label for="cabin">Shares Cabin</label><br><br>
+    <input type ="checkbox" id="breakfast" value="True">
+    <label for="breakfast">Breakfast</label><br><br>
+    <input type ="checkbox" id="pool" value="False">
+    <label for="pool">Pool pass</label><br><br>
+    <input type="button" value="Select a cruise" onClick="selectCruise()"><br><br>
+</form>
+
+
+<div id="summary"></div><br><br>
+
+<script> 
+    let krishna_cruise={};
+    function selectCruise(){
+        krishna_cruise={};
+
+        const cabinCheck=document.getElementById("cabin");
+        const breakfastCheck=document.getElementById("breakfast");
+        const poolCheck=document.getElementById("pool");
+
+        krishna_cruise.shared=cabinCheck.checked;
+        krishna_cruise.breakfast=breakfastCheck.checked;
+        krishna_cruise.pool=poolCheck.checked;
+
+        document.getElementById("summary").innerHTML= JSON.stringify(my_cruise);
+            
+    }
+</script>
+
+<form>
+    <label for="day" >Enter the number of days</label>
+    <input type="text" id="day" value="days"><br><br>
+    <label for="cost" >Enter price</label>
+    <input type="text" id="cost"><br><br>
+    <input type="button" value="Update the cruise" onclick="updateCruise()"><br><br>
+</form>
+
+<script>
+    function updateCruise(){
+        const dayCount=document.getElementById("day").value;
+        const price=document.getElementById("cost").value;
+
+        krishna_cruise.days=dayCount;
+        krishna_cruise.price=price;
+        document.getElementById("summary").innerHTML= JSON.stringify(my_cruise);
+    }
+</script>
+
+</body>
+</html>
